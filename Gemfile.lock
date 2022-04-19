@@ -34,6 +34,7 @@ DEPENDENCIES
   debase (~> 0.2.4)
   rake (~> 12.0)
   rspec (~> 3.0)
+  rspec-core (~> 3.11)
   ruby-debug-ide (~> 0.7.3)
   ruby-exploration!
 

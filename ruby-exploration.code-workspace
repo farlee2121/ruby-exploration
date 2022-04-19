@@ -4,7 +4,14 @@
 			"path": "."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"rubyTestExplorer.filePattern": [
+			"*_test.rb",
+			"test_*.rb",
+			"*_spec.rb",
+			"**/*_spec.rb"
+		]
+	},
 	"extensions": {
 		"recommendations": [
 			"sorbet.sorbet-vscode-extension",
