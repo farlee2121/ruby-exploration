@@ -19,5 +19,14 @@ Also need to figure out some basic ruby tooling
 - test ui integration (running rspec in console wouldn't be bad)
 
 
+## Exploration
+Meta-programming: https://codeburst.io/ruby-macros-18bb67e051c7
 
-https://codeburst.io/ruby-macros-18bb67e051c7
+ruby basics: https://www.tutorialspoint.com/ruby/index.htm
+
+Some standard ruby project setup https://stackoverflow.com/questions/9549450/how-do-i-set-up-a-basic-ruby-project
+- hmm looks like I should have used `bundle gem name-here` to template
+- the other step is `rspec --init`
+
+Looks like debug support requires some gems
+- https://github.com/rubyide/vscode-ruby/blob/main/docs/debugger.md
