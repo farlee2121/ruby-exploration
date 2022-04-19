@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"sorbet.sorbet-vscode-extension",
+			"connorshea.vscode-ruby-test-adapter",
+			"rebornix.ruby"
+		]
+	}
 }
