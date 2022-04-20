@@ -42,3 +42,5 @@ I had a hard time getting require to work. This article helps https://stackoverf
 Module quirk: Ruby examples show `def ModuleName.methodName()` for defining methods. Sorbet expects `def self.methodName()` 
 - looks like self is a special keyword. You cannot use other identifier expressions like in F#
 
+Q: Do cross-module calls (like instantiating `Cat`) need to be fully qualified?
+

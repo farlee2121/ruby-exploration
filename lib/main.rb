@@ -8,6 +8,8 @@ sig {params(name: String).returns(NilClass)}
 def main(name)
     puts "Hello, #{name}!";
     Nyan.Toast()
+    cat = Nyan::Cat.new
+    cat.Meow()
 end
 
 main("sam")

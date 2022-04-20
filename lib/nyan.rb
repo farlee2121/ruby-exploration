@@ -4,13 +4,14 @@ module Nyan
     def self.Toast()
         puts "toast"
     end
-    # class Cat
-    #     def initialize
+    
+    class Cat
+        def initialize
             
-    #     end
+        end
 
-    #     def Meow()
-    #         puts "meow"
-    #     end
-    # end
+        def Meow()
+            puts "meow"
+        end
+    end
 end
