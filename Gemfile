@@ -13,6 +13,8 @@ gem "debase", "~> 0.2.4", :group => :development
 gem "rspec-core", "~> 3.11", :group => :development
 
 
-gem "sorbet", "~> 0.4.4250", :group => :development
+gem "sorbet", "~> 0.5.9905", :group => :development
 
 gem "sorbet-runtime", "~> 0.5.9903"
+
+

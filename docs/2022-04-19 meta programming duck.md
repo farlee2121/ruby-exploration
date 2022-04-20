@@ -44,3 +44,18 @@ Module quirk: Ruby examples show `def ModuleName.methodName()` for defining meth
 
 Q: Do cross-module calls (like instantiating `Cat`) need to be fully qualified?
 
+Q: Sorbet always shows as "Restarting" in the vs code bottom ribbon. I don't think I'm getting it's editor support. Why could be the issue?
+- Running in WSL?
+  - it is installed/enabled in both WSL and this workspace
+- Can I get logs? yes, via sorbet selection in console output
+  - `can't find executable srb for gem sorbet` looks like the error I got trying to run via bundle
+  - yup `bundler: failed to load command: srb (/home/farlee2121/gems/bin/srb)` is also in the trace
+- Can I set the srb command? Or do I need to restart to get the right path?
+  - can't set the command, but there is an "enabled" toggle that wasn't set...
+  - updating gem version didn't work https://stackoverflow.com/questions/55381711/msfconsole-pop-out-an-error-bundler-faild-to-load-cannot-load-such-file-b
+  - maybe the bundle gem version?
+  - !!! interesting, it appears that I got a different version with bundle add than I did with gem install. Bundle exec is meant to execute with of the gems of the current context's gem file, so it was getting an older version that apparently didn't have the srb command. Meanwhile the newer version had registered the srb command in my normal path. 
+- New error: `Error running Watchman (with ``watchman -j -p --no-pretty``)`
+  - watchman is not a gem. It needs to be installed at the system level 
+  - https://github.com/sorbet/sorbet/issues/1758
+  - https://facebook.github.io/watchman/docs/install.html
