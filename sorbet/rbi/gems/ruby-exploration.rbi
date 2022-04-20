@@ -9,9 +9,13 @@
 #
 # ruby-exploration-0.1.0
 
-module Ruby
+module Nyan
 end
-module Ruby::Exploration
+class Nyan::Cat
+  def Meow; end
+  def initialize; end
 end
-class Ruby::Exploration::Error < StandardError
+class Object < BasicObject
+  def main(arg0, &blk); end
+  extend T::Private::Methods::MethodHooks
 end

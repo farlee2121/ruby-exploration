@@ -33,3 +33,12 @@ Looks like debug support requires some gems
 
 Next, setting up sorbet
 - Sorbet doesn't support windows ;-; https://sorbet.org/docs/faq#what-platforms-does-sorbet-support 
+
+
+I had a hard time getting require to work. This article helps https://stackoverflow.com/questions/9750610/ruby-require-error-cannot-load-such-file
+- by default, it expects a path relative to some dir in the LOAD_PATH, which I thought I was doing
+- `require_relative` ended up being a simpler solution
+
+Module quirk: Ruby examples show `def ModuleName.methodName()` for defining methods. Sorbet expects `def self.methodName()` 
+- looks like self is a special keyword. You cannot use other identifier expressions like in F#
+

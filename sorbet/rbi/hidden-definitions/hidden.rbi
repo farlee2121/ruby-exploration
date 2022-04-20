@@ -4572,6 +4572,10 @@ class Object
   TOPLEVEL_BINDING = ::T.let(nil, ::T.untyped)
 end
 
+class Object
+  extend ::T::Private::Methods::MethodHooks
+end
+
 class Proc
   def clone(); end
 end
