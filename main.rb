@@ -1,3 +1,4 @@
+# typed: true
 
 def main()
     puts "Hello, Ruby!";

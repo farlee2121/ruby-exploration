@@ -30,6 +30,7 @@ GEM
     sorbet-runtime (0.5.9903)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES

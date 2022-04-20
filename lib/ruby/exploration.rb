@@ -1,3 +1,4 @@
+# typed: strict
 require "ruby/exploration/version"
 
 module Ruby
