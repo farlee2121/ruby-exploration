@@ -26,6 +26,8 @@ GEM
     rspec-support (3.11.0)
     ruby-debug-ide (0.7.3)
       rake (>= 0.8.1)
+    sorbet (0.4.4250)
+    sorbet-runtime (0.5.9903)
 
 PLATFORMS
   x64-mingw32
@@ -37,6 +39,8 @@ DEPENDENCIES
   rspec-core (~> 3.11)
   ruby-debug-ide (~> 0.7.3)
   ruby-exploration!
+  sorbet (~> 0.4.4250)
+  sorbet-runtime (~> 0.5.9903)
 
 BUNDLED WITH
    2.1.4

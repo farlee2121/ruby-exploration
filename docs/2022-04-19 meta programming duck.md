@@ -30,3 +30,6 @@ Some standard ruby project setup https://stackoverflow.com/questions/9549450/how
 
 Looks like debug support requires some gems
 - https://github.com/rubyide/vscode-ruby/blob/main/docs/debugger.md
+
+Next, setting up sorbet
+- Sorbet doesn't support windows ;-; https://sorbet.org/docs/faq#what-platforms-does-sorbet-support 
