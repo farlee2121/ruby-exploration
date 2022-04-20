@@ -1,7 +1,11 @@
-# typed: true
+# typed: strict
+require "sorbet-runtime"
 
-def main()
-    puts "Hello, Ruby!";
+extend T::Sig
+
+sig {params(name: String).returns(NilClass)}
+def main(name)
+    puts "Hello, #{name}!";
 end
 
-main()
+main("sam")
