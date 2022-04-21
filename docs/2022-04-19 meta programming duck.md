@@ -74,6 +74,16 @@ Also, ruby is more strict about object encapsulation. it discourages exposed cla
 
 Side note: i don't know what blocks were intended to add to the language. It's like the template pattern, but for methods
 
+Ruby does support variadic methods
+- https://stackoverflow.com/questions/4967735/ruby-method-with-maximum-number-of-parameters
+- can't seem to find the source that talked about `**kwargs`, but you can use that to get just keyword arguments
+
+## convention notes
+the standard casing seems to be snake case
+
+`name=` is how names are specified
+Ruby allows a variety of special characters in names like `?`
+
 ## Sorbet exploration
 
 I'm not finding any docs on how macros are handled...
@@ -83,3 +93,8 @@ Some other cool things I found
 - [exhaustiveness checking](https://sorbet.org/docs/exhaustiveness)
 - [intersection types](https://sorbet.org/docs/intersection-types) 
   - basically an "and" generic constraint
+
+A quick experiment seems to show Sorbet does not handle dynamically added methods.
+I suppose the [original article](https://stripe.com/blog/sorbet-stripes-type-checker-for-ruby) did say "metaprogramming is very opaque"
+
+I think sorbet should still work for proxies and any method that have an clear def that could be annotated

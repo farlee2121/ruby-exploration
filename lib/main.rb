@@ -16,6 +16,7 @@ def main(name)
     Nyan.Toast()
     cat = Nyan::Cat.new
     cat.Meow()
+    cat.eat()
 end
 
 main("sam")
