@@ -9,7 +9,7 @@ module Nyan
         def initialize
             
         end
-
+        
         def Meow()
             puts "meow"
         end

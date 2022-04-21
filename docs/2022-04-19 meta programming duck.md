@@ -8,15 +8,16 @@ Reading about Ruby's [Sorbet](https://stripe.com/blog/sorbet-stripes-type-checke
 
 A few things to clear up
 - what meta-programming features does ruby have
-  - syntactic macros?
+  - syntactic macros? A: nope
   - reflection/introspection (I know it has this for sure)
   - aspect-orientation decorators or proxies
     - probably has this because I think Social Assurance uses AOP
+    - A: https://gist.github.com/unit432/d665a5c977032c3b55ee202fc6525304#file-04-dynamic-proxies-rb
 
 Also need to figure out some basic ruby tooling
-- what's expected in a basic ruby project (looks like I at least need a gem file for Sorbet)
-- debugging support
-- test ui integration (running rspec in console wouldn't be bad)
+- [x] what's expected in a basic ruby project (looks like I at least need a gem file for Sorbet)
+- [x] debugging support
+- [x] test ui integration (running rspec in console wouldn't be bad)
 
 
 ## Exploration
@@ -59,3 +60,26 @@ Q: Sorbet always shows as "Restarting" in the vs code bottom ribbon. I don't thi
   - watchman is not a gem. It needs to be installed at the system level 
   - https://github.com/sorbet/sorbet/issues/1758
   - https://facebook.github.io/watchman/docs/install.html
+
+
+## Meta-programming Exploration
+Most notes are in my reading notes for https://codeburst.io/ruby-macros-18bb67e051c7
+
+One of the most helpful resources was this collection of examples https://gist.github.com/unit432/d665a5c977032c3b55ee202fc6525304
+
+Basically, Ruby is not a symbolic language like lisp. Most meta programming is accomplished by dynamically adding methods or through certain language event hooks (e.g. method_missing). 
+Dynamically declaring classes doesn't have much point because ruby is structural anyways. 
+
+Also, ruby is more strict about object encapsulation. it discourages exposed class data and expects you to expose any instance state via methods.
+
+Side note: i don't know what blocks were intended to add to the language. It's like the template pattern, but for methods
+
+## Sorbet exploration
+
+I'm not finding any docs on how macros are handled...
+
+Some other cool things I found
+- [unions](https://sorbet.org/docs/union-types)
+- [exhaustiveness checking](https://sorbet.org/docs/exhaustiveness)
+- [intersection types](https://sorbet.org/docs/intersection-types) 
+  - basically an "and" generic constraint
