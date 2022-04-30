@@ -11,6 +11,9 @@ def unique_in_order(iterable)
     }
   end
 
+# A clever answer off codewars
+## (iterable.is_a?(String) ? iterable.chars : iterable).chunk { |x| x }.map(&:first)
+
 RSpec.describe "run reduce" do
     it "" do
         # shows the same answer in the console, and works in code wars, not sure what's the problem here
