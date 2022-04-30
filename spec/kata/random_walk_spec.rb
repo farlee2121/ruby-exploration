@@ -1,14 +1,11 @@
 
 Point = Struct.new(:x, :y)
 def add_direction_unit(coordinate, direction)
-    if (direction == "n") 
-        coordinate.y += 1 
-    elsif direction == "s"
-        coordinate.y -= 1 
-    elsif direction == "e"
-        coordinate.x += 1
-    elsif direction == "w"
-        coordinate.x -= 1
+    case direction
+        when "n" then coordinate.y += 1
+        when "s" then coordinate.y -= 1
+        when "e" then coordinate.x += 1
+        when "w" then coordinate.x -= 1
     end
     return coordinate
 end
