@@ -16,8 +16,7 @@ def unique_in_order(iterable)
 
 RSpec.describe "run reduce" do
     it "" do
-        # shows the same answer in the console, and works in code wars, not sure what's the problem here
-        expect(unique_in_order('AAAABBBCCDAABBB')).to equal(['A','B','C','D','A','B'])
+        expect(unique_in_order('AAAABBBCCDAABBB')).to eq(['A','B','C','D','A','B'])
     end
 
 end
