@@ -5,10 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Local File",
-            "type": "Ruby",
+            "type": "ruby_lsp",
+            "name": "Debug",
             "request": "launch",
-            "program": "${workspaceRoot}/lib/main.rb"
-        }
+            "program": "ruby ${file}"
+          },
+          {
+            "type": "ruby_lsp",
+            "request": "launch",
+            "name": "Debug test file",
+            "program": "ruby -Itest ${relativeFile}"
+          },
+          {
+            "type": "ruby_lsp",
+            "request": "attach",
+            "name": "Attach to existing server"
+          }
     ]
 }

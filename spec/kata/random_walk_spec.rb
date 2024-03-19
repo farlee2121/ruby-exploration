@@ -21,7 +21,7 @@ def is_valid_walk(walk)
   end
 
 
-RSpec.describe "String ends with" do
+RSpec.describe "Random Walk" do
     it "should pass sample tests" do
         expect(is_valid_walk(['n','s','n','s','n','s','n','s','n','s'])).to be true;
         expect(is_valid_walk(['w','e','w','e','w','e','w','e','w','e','w','e'])).to be false;

@@ -1,12 +1,12 @@
-def solution(str, ending)
-  str.end_with? ending
-end
 
-RSpec.describe "String ends with" do
-    it "should pass sample tests" do
-      expect(solution('abcde', 'cde')).to be true
-      expect(solution('abcde', 'abc')).to be false
-      expect(solution('abcde', '')).to be true
-    end
-end
+  def endsWith(str, ending)
+    str.end_with? ending
+  end
   
+  RSpec.describe "String ends with" do
+    it "should pass sample tests" do
+      expect(endsWith('abcde', 'cde')).to eq(true)
+      expect(endsWith('abcde', 'abc')).to eq(false)
+      expect(endsWith('abcde', '')).to eq(true)
+    end
+  end

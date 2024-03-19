@@ -14,7 +14,7 @@ def likes(names)
   end
 
 
-describe 'Basic tests' do
+RSpec.describe 'likes kata' do
     it "Testing" do
       expect(likes([])).to  eq('no one likes this')
       expect(likes(['Peter'])).to eq('Peter likes this')

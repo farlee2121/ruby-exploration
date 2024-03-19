@@ -3,21 +3,22 @@
 
 # could have used a regex sub like: string.gsub(/(?=[A-Z])/, ' ')
 
-def solution(string)
+
+def camelCaseSplit(string)
     # complete the function
-     string.chars.reduce([]) { |agg, char| 
+    string.chars.reduce([]) { |agg, char| 
         case char 
         when "A".."Z" then agg.concat([" ", char])
         else agg.append(char)
         end
-      }.join
-  end
+    }.join
+end
 
-RSpec.describe "Example Tests" do
+RSpec.describe "Camel Case" do
     it "Test 1" do
-        expect(solution('camelCasing')).to eq('camel Casing')
+        expect(camelCaseSplit('camelCasing')).to eq('camel Casing')
     end
     it "Test 2" do
-        expect(solution('camelCasingTest')).to eq('camel Casing Test')
+        expect(camelCaseSplit('camelCasingTest')).to eq('camel Casing Test')
     end
-  end
+end
