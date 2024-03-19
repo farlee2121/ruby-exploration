@@ -10,11 +10,6 @@ GEM
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.15)
     diff-lcs (1.5.0)
-    mechanize (1.0.0)
-      nokogiri (>= 1.2.1)
-    nokogiri (1.12.5-x86_64-linux)
-      racc (~> 1.4)
-    racc (1.6.0)
     rake (12.3.3)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
@@ -35,8 +30,6 @@ GEM
       sorbet-static (= 0.5.9905)
     sorbet-runtime (0.5.9905)
     sorbet-static (0.5.9905-x86_64-linux)
-    watchman (0.1.1)
-      mechanize (= 1.0.0)
 
 PLATFORMS
   ruby
@@ -51,7 +44,6 @@ DEPENDENCIES
   ruby-exploration!
   sorbet (~> 0.5.9905)
   sorbet-runtime (~> 0.5.9903)
-  watchman (~> 0.1.1)
 
 BUNDLED WITH
-   2.1.4
+   2.2.33
