@@ -15,10 +15,10 @@ end
 #   end
 
 
-describe "Solution" do
-    it "should test for something" do
-      Test.assert_equals(find_uniq([1,1,1,1,0]), 0)
-      Test.assert_equals(find_uniq([ 1, 1, 1, 2, 1, 1 ]), 2);
-      Test.assert_equals(find_uniq([ 0, 0, 0.55, 0, 0 ]), 0.55);
+RSpec.describe "Find unique" do
+    it "sample tests" do
+      expect(find_uniq([1,1,1,1,0])).to eq(0)
+      expect(find_uniq([ 1, 1, 1, 2, 1, 1 ])).to eq(2);
+      expect(find_uniq([ 0, 0, 0.55, 0, 0 ])).to eq(0.55);
     end
   end

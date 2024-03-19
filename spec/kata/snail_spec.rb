@@ -100,12 +100,12 @@ def snail(array)
     return traversed
   end
 
-def test input , expected
-    output = snail(input)
-    Test.expect(expected == output, "When snail(#{input}) expected #{expected} but got #{output}")
+RSpec.describe "Snail" do
+    it "Sample Tests" do
+        expect(snail([[1,2,3],[4,5,6],[7,8,9]])).to eq([1, 2, 3, 6, 9, 8, 7, 4, 5])
+        expect(snail([[1,2],[3,4]])).to eq([1, 2, 4, 3])
+        expect(snail([[1]])).to eq([1])
+        expect(snail([[]])).to eq([])
+    end
 end
 
-test( [[1,2,3],[4,5,6],[7,8,9]] , [1, 2, 3, 6, 9, 8, 7, 4, 5])
-test( [[1,2,],[3,4]] , [1, 2, 4, 3])
-test( [[1]] , [1])
-test( [[]] , [])

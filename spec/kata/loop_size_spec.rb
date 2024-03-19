@@ -1,3 +1,15 @@
+class Node
+  def initialize()
+  end
+
+  def next 
+    @next
+  end
+  def next=(value) 
+    @next = value
+  end
+end
+
 def loop_size(node)
     seen = []
     current = node
@@ -31,8 +43,8 @@ def create_chain_for_test(tail_size, loop_size)
   end
 
 
-describe 'Basic tests' do
-    it "Testing" do
+RSpec.describe 'Loop Size' do
+    it "Sample Tests" do
       expect(loop_size(create_chain_for_test(3,12))).to  eq(12)
       expect(loop_size(create_chain_for_test(0,12))).to  eq(12)
       expect(loop_size(create_chain_for_test(1,0))).to  eq(1)
