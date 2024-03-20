@@ -8,12 +8,14 @@
 ##   this makes sense because after two moves you're turning back in a direction you've previously visited.
 ## - The number of moves is also predictable because we visit every node exactly once. 
 ## It'd be easier to loop if there was a nice way to calculate the magnitude of movement based on visit index. Is there one?
-## - n - (i/2).ceil? 3x3 thats 3 - (0/2).ceil = 3, 1 -> 2, 2 -> 2, 3 -> 1 ->, 4 -> 1, 5 -> 0. But this is wrong, it's based on the move index, not the node index. That's fine if I find a way to calculate the number of moves
+## - n - (i/2).ceil? 2x2 -> 0 -> 2, 1 -> 1, 2 -> 1 3x3 thats 3 - (0/2).ceil = 3, 1 -> 2, 2 -> 2, 3 -> 1 ->, 4 -> 1, 5 -> 0. But this is wrong, it's based on the move index, not the node index. That's fine if I find a way to calculate the number of moves
 ## Q: number of moves equation?
 ## - 1x1 -> 0 ; 2x2 -> 3 ; 3x3 -> 5 ; 4 x 4 -> 7 ; 5 x 5 -> 9
 ## - appears to be 3 + ((n-2)*2) for n >= 2  
 
 ## with these new calculations, I could also calculate direction based on move index and make the whole thing mutation-free, just a functional-style map
+
+## I'm pretty sure my solution isn't what they're looking for, but it taught me a lot (how to define constants in ruby, reducing, hash/dictionary)
 
 # class Directions
 #     class << self 
@@ -67,10 +69,10 @@ class Position
     end
 
     def travel (direction, distance, &handlePoint)
-        return (1..distance).to_a.reduce(self) {|point,_| 
-            handlePoint.call(point) # I think there's a bug here. on the first move I expect it to handle the start point, but after I expect it not to
+        return (0..distance).to_a.reduce(self) {|point,_| 
+            handlePoint.call(point)
             point.move(direction, 1)
-        }
+        }.move(direction, -1)
     end
 
 end
@@ -91,10 +93,12 @@ def snail(array)
     traversed = []
     current_position = Position.new(0,0)
     current_direction = Directions::RIGHT
-    for move_index in (5..1).step(-1) do
-        magnitude = array.length - (move_index/2).ceil
-        current_position = current_position.travel(current_direction, magnitude){|point| traversed.append(array[point.y][point.x])}
+    for move_index in (0..number_of_moves-1) do
+        magnitude = array.length - (move_index/2.to_f).ceil - 1
+        final_covered = current_position.travel(current_direction, magnitude){|point| traversed.append(array[point.y][point.x])}
         current_direction = next_direction(current_direction)
+        ## Other than the first move, we don't want to cover the node the last moved ended on / already covered
+        current_position = final_covered.move(current_direction, 1)
     end
 
     return traversed
